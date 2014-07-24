@@ -4,7 +4,7 @@
  *********************************************/
 
 
- /* Ripped from Reveal.js: https://github.com/hakimel/reveal.js/; */
+ /* Inspired by Reveal.js: https://github.com/hakimel/reveal.js/; */
 
 .ui-scroll-controls {
     display: block;
@@ -142,12 +142,12 @@
     left: -150%;
 }
 
-.ui-scroll-panels.enter-left .panel-left,
-.ui-scroll-panels.enter-left .panel-current,
-.ui-scroll-panels.enter-left .panel-right,
-.ui-scroll-panels.enter-right .panel-left,
-.ui-scroll-panels.enter-right .panel-current,
-.ui-scroll-panels.enter-right .panel-right {
+.ui-scroll-panels.scroll-left .panel-left,
+.ui-scroll-panels.scroll-left .panel-current,
+.ui-scroll-panels.scroll-left .panel-right,
+.ui-scroll-panels.scroll-right .panel-left,
+.ui-scroll-panels.scroll-right .panel-current,
+.ui-scroll-panels.scroll-right .panel-right {
     -webkit-transition: -webkit-transform 0.5s ease-out 0;
        -moz-transition: -moz-transform 0.5s ease-out 0;
         -ms-transition: -ms-transform 0.5s ease-out 0;
@@ -155,9 +155,9 @@
             transition: transform 0.5s ease-out 0;
 }
 
-.ui-scroll-panels.enter-left .panel-left,
-.ui-scroll-panels.enter-left .panel-current,
-.ui-scroll-panels.enter-left .panel-right {
+.ui-scroll-panels.scroll-left .panel-left,
+.ui-scroll-panels.scroll-left .panel-current,
+.ui-scroll-panels.scroll-left .panel-right {
     -webkit-transform: translate3d( 150%, 0, 0 );
        -moz-transform: translate3d( 150%, 0, 0 );
         -ms-transform: translate3d( 150%, 0, 0 );
@@ -165,9 +165,9 @@
             transform: translate3d( 150%, 0, 0 );
 }
 
-.ui-scroll-panels.enter-right .panel-left,
-.ui-scroll-panels.enter-right .panel-current,
-.ui-scroll-panels.enter-right .panel-right {
+.ui-scroll-panels.scroll-right .panel-left,
+.ui-scroll-panels.scroll-right .panel-current,
+.ui-scroll-panels.scroll-right .panel-right {
     -webkit-transform: translate3d( -150%, 0, 0 );
        -moz-transform: translate3d( -150%, 0, 0 );
         -ms-transform: translate3d( -150%, 0, 0 );
