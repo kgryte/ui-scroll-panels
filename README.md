@@ -99,6 +99,19 @@ scroll.scroll( 'left', function onEnd() {
 ```
 
 
+### Shortcuts
+
+* 	__h__, __left__: scroll left
+*	__l__, __right__: scroll right
+*	__k__, __up__: scroll up (_not yet supported_)
+*	__j__, __down__: scroll down (_not yet supported_)
+
+
+### Notes
+
+If multiple scroll containers are present, shortcuts currently affect all scroll containers; e.g., a __left__ keypress will cause all scroll containers to scroll left.
+
+
 ===
 ### Browserify
 
