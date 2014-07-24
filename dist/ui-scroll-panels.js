@@ -182,6 +182,8 @@
 		return this;
 	}; // end METHOD current()
 
+	// TODO: handle the case where a panel container is initialized more than once. Currently, multiple of the same listener would be attached. Possibly use data attributes and check for initialization.
+
 	/**
 	* METHOD: init()
 	*	Initializes the scroll layout.
@@ -194,6 +196,9 @@
 			current = this._current,
 			key, direction, listener, el;
 
+		if ( !this._selection ) {
+			throw new Error( 'init()::no selection. Must first select a panel container before attempting to initialize.' );
+		}
 		this._init = true;
 
 		if ( this._numPanels === 1 ) {
@@ -254,18 +259,24 @@
 	}; // end METHOD init()
 
 	/**
-	* METHOD: scroll( direction )
+	* METHOD: scroll( direction, clbk )
 	*	Scroll to the next panel.
 	*
+	* @param {String} direction - scroll direction
+	* @param {Function} [clbk] - callback invoked after scroll completion
 	* @returns {Panels} Panels instance
 	*/
-	Panels.prototype.scroll = function( direction ) {
+	Panels.prototype.scroll = function( direction, clbk ) {
 		var self = this,
 			panels = this._panels,
 			numPanels = this._numPanels,
 			current = this._current,
 			next,
 			cPanel, nPanel;
+
+		if ( !this._init ) {
+			throw new Error( 'scroll()::not initialized. Scroll panels must first be given a selection and then initialized before attempting to scroll.' );
+		}
 
 		if ( typeof direction !== 'string' ) {
 			throw new Error( 'scroll()::invalid input argument. Direction must be a string.' );
@@ -343,6 +354,10 @@
 
 			// Reset the animation status:
 			self._animating = false;
+
+			if ( clbk ) {
+				clbk();
+			}
 		} // end FUNCTION transitionEnd()
 	}; // end METHOD scroll()
 
