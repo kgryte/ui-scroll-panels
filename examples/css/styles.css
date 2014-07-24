@@ -1,0 +1,68 @@
+
+/**
+* SCROLL CONTROLS
+*/
+
+.ui-scroll-controls {
+	position: absolute!important;
+}
+
+/**
+* COLORS
+*/
+
+.red {
+	background: rgb(255,0,0);
+}
+
+.green {
+	background: rgb(0,255,0);
+}
+
+.blue {
+	background: rgb(0,0,255);
+}
+
+.black {
+	background: rgb(0,0,0);
+}
+
+.grey {
+	background: rgb(120,120,120);
+}
+
+/**
+* PANELS
+*/
+
+.panels {
+	display: block;
+	position: relative;
+	width: 500px;
+	height: 500px;
+	margin: 50 auto;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #474747;
+}
+
+.panel {
+	float: left;
+	height: 100%;
+}
+
+.panels-2 {
+	width: 50%;
+}
+
+.panels-3 {
+	width: 33%;
+}
+
+.panels-4 {
+	width: 25%;
+}
+
+.panels-5 {
+	width: 20%;
+}

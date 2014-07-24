@@ -1,0 +1,41 @@
+{
+  "name": "ui-scroll-panels",
+  "version": "0.0.0",
+  "description": "UI scroll panels.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "athan@nodeprime.com"
+  },
+  "contributors": [
+    {}
+  ],
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover _mocha --dir ./reports/coverage -- -R spec "
+  },
+  "main": "./lib/js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kgryte/ui-scroll-panels.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kgryte/ui-scroll-panels/issues"
+  },
+  "keywords": [
+    "ui",
+    "scroll",
+    "panels"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "*",
+    "express": "^4.6.1",
+    "mocha": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+
+/*********************************************
+ * CONTROLS
+ *********************************************/
+
+
+ /* Ripped from Reveal.js: https://github.com/hakimel/reveal.js/; */
+
+.ui-scroll-controls {
+    display: block;
+    position: fixed;
+    width: 110px;
+    height: 110px;
+    z-index: 6;
+    right: 10px;
+    bottom: 10px;
+}
+
+    .ui-scroll-controls .ui-scroll-control-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ui-scroll-controls .ui-scroll-control {
+        position: absolute;
+        opacity: 1;
+        width: 0;
+        height: 0;
+        border: 12px solid transparent;
+
+        -moz-transform: scale(.9999);
+
+        -webkit-transition: all 0.2s ease;
+           -moz-transition: all 0.2s ease;
+            -ms-transition: all 0.2s ease;
+             -o-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+    }
+
+    .ui-scroll-controls [aria-disabled="false"] {
+        opacity: 1.0;
+        cursor: pointer;
+    }
+
+    .ui-scroll-controls [aria-disabled="true"] {
+        opacity: 0.2;
+    }
+
+    .ui-scroll-controls [aria-disabled="false"]:active {
+        margin-top: 1px;
+    }
+
+    .ui-scroll-controls .nav-left {
+        top: 42px;
+
+        border-right-width: 22px;
+        border-right-color: rgb(154, 191, 75);
+    }
+        
+    .ui-scroll-controls .nav-right {
+        left: 74px;
+        top: 42px;
+
+        border-left-width: 22px;
+        border-left-color: rgb(154, 191, 75);
+    }
+
+    .ui-scroll-controls .nav-up {
+        left: 42px;
+
+        border-bottom-width: 22px;
+        border-bottom-color: rgb(154, 191, 75);
+    }
+
+    .ui-scroll-controls .nav-down {
+        left: 42px;
+        top: 74px;
+
+        border-top-width: 22px;
+        border-top-color: rgb(154, 191, 75);
+    }
+
+
+    
+
+/******************************************
+ * PANEL ELEMENTS
+ ******************************************/
+
+/* Inspired by http://tympanus.net/Development/TripleViewLayout/ */
+
+ .ui-scroll-panels .panel-current,
+ .ui-scroll-panels .panel-hidden,
+ .ui-scroll-panels .panel-left,
+ .ui-scroll-panels .panel-right {
+    display: block;
+
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+         -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.ui-scroll-panels .ui-scroll-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+         -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.ui-scroll-panels .panel-current {
+    position: relative;
+    left: 0;
+    z-index: 5;
+    opacity: 1;
+}
+
+.ui-scroll-panels .panel-hidden {
+    height: 100%;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.ui-scroll-panels .panel-right,
+.ui-scroll-panels .panel-left {
+    opacity: 1;
+}
+
+.ui-scroll-panels .panel-right {
+    left: 150%;
+}
+
+.ui-scroll-panels .panel-left {
+    left: -150%;
+}
+
+.ui-scroll-panels.enter-left .panel-left,
+.ui-scroll-panels.enter-left .panel-current,
+.ui-scroll-panels.enter-left .panel-right,
+.ui-scroll-panels.enter-right .panel-left,
+.ui-scroll-panels.enter-right .panel-current,
+.ui-scroll-panels.enter-right .panel-right {
+    -webkit-transition: -webkit-transform 0.5s ease-out 0;
+       -moz-transition: -moz-transform 0.5s ease-out 0;
+        -ms-transition: -ms-transform 0.5s ease-out 0;
+         -o-transition: -o-transform 0.5s ease-out 0;
+            transition: transform 0.5s ease-out 0;
+}
+
+.ui-scroll-panels.enter-left .panel-left,
+.ui-scroll-panels.enter-left .panel-current,
+.ui-scroll-panels.enter-left .panel-right {
+    -webkit-transform: translate3d( 150%, 0, 0 );
+       -moz-transform: translate3d( 150%, 0, 0 );
+        -ms-transform: translate3d( 150%, 0, 0 );
+         -o-transform: translate3d( 150%, 0, 0 );
+            transform: translate3d( 150%, 0, 0 );
+}
+
+.ui-scroll-panels.enter-right .panel-left,
+.ui-scroll-panels.enter-right .panel-current,
+.ui-scroll-panels.enter-right .panel-right {
+    -webkit-transform: translate3d( -150%, 0, 0 );
+       -moz-transform: translate3d( -150%, 0, 0 );
+        -ms-transform: translate3d( -150%, 0, 0 );
+         -o-transform: translate3d( -150%, 0, 0 );
+            transform: translate3d( -150%, 0, 0 );
+}
