@@ -4,9 +4,19 @@
 (function() {
 	'use strict';
 
-	// MODULES //
+	// ENVIRONMENT //
 
-	var Modernizr = _dereq_( './modernizr.js' );
+	var Modernizr, name, prop;
+
+	// Browser or Node.js?
+	if ( typeof window !== 'undefined' ) {
+		Modernizr = _dereq_( './modernizr.js' ); // browser
+		name = Modernizr.prefixed( 'transition' );
+		prop = Modernizr.prefixed( 'transform' );
+	} else {
+		name = 'transition';
+		prop = 'transform';
+	}
 
 
 	// VARIABLES //
@@ -18,8 +28,8 @@
 			'msTransition': 'MSTransitionEnd',
 			'transition': 'transitionend'
 		},
-		EVENT = EVENTNAMES[ Modernizr.prefixed( 'transition' ) ],
-		TRANSFORM = Modernizr.prefixed( 'transform' ),
+		EVENT = EVENTNAMES[ name ],
+		TRANSFORM = prop,
 		NAV = {
 			'right': '.nav-right',
 			'left': '.nav-left',
@@ -109,7 +119,7 @@
 		};
 		this._panels = [];
 
-		this._numPanels = null;
+		this._numPanels = 0;
 
 		// Panel staging:
 		this._current = 0;
@@ -172,6 +182,9 @@
 		}
 		if ( typeof idx !== 'number' || idx !== idx ) {
 			throw new Error( 'current()::invalid input argument. Current index must be numeric.' );
+		}
+		if ( idx > this._numPanels ) {
+			throw new Error( 'current()::invalid input argument. Index exceeds the number of panels.' );
 		}
 		this._current = idx;
 

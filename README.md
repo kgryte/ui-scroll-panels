@@ -112,6 +112,51 @@ If no module systems are found, `uiScrollPanels` will be bound to the `window` g
 
 
 ---
+## Tests
+
+WARNING: unit and functional tests are fairly non-existent at the moment. 
+
+### Unit
+
+Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions.
+
+Assuming you have installed Mocha,
+
+``` bash
+$ npm install -g mocha
+```
+
+execute the following command in the top-level application directory to run the tests:
+
+``` bash
+$ make test
+```
+
+All new feature development should have corresponding unit tests to validate correct functionality.
+
+
+### Test Coverage
+
+Assuming you have installed [Istanbul](https://github.com/gotwarlost/istanbul),
+
+``` bash
+$ npm install -g istanbul
+```
+
+execute the following command to generate a test coverage report:
+
+``` bash
+$ make test-cov
+```
+
+Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
+
+``` bash
+$ open reports/coverage/lcov-report/index.html
+```
+
+
+---
 ## Credits
 
 Two works provided inspiration for this implementation:

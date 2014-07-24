@@ -8,6 +8,8 @@ TODO.md
 # Directories #
 ###############
 build/
+dist/
+templates/
 docs/
 examples/
 reports/
