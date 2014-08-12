@@ -323,7 +323,7 @@
 		nPanel.classList.remove( 'panel-hidden' );
 
 		// Add a listener for the transition end event:
-		nPanel.addEventListener( EVENT, transitionEnd );
+		nPanel.addEventListener( EVENT, transitionEnd, false );
 
 		// Add a class to the panel container to begin animation:
 		this._selection.classList.add( 'scroll-' + direction );
@@ -339,11 +339,8 @@
 		function transitionEnd( event ) {
 			var prop = event.propertyName
 				.toLowerCase()
-				.split( '-' );
-
-			prop = prop
-				.slice( 1, prop.length )
-				.join( '' );
+				.split( '-' )
+				.join( "" );
 
 			if ( prop !== TRANSFORM.toLowerCase() ) {
 				return false;

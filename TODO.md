@@ -13,5 +13,5 @@ TODO
 
 ## Tests
 
-1. 	JSDOM
+1. 	Zombie.js
 2. 	

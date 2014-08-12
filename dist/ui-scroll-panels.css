@@ -148,11 +148,29 @@
 .ui-scroll-panels.scroll-right .panel-left,
 .ui-scroll-panels.scroll-right .panel-current,
 .ui-scroll-panels.scroll-right .panel-right {
-    -webkit-transition: -webkit-transform 0.5s ease-out 0;
-       -moz-transition: -moz-transform 0.5s ease-out 0;
-        -ms-transition: -ms-transform 0.5s ease-out 0;
-         -o-transition: -o-transform 0.5s ease-out 0;
-            transition: transform 0.5s ease-out 0;
+    -webkit-transition-property: transform;
+       -moz-transition-property: transform;
+        -ms-transition-property: transform;
+         -o-transition-property: transform;
+            transition-property: transform;
+
+    -webkit-transition-duration: 0.5s;
+       -moz-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
+         -o-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+
+    -webkit-transition-timing-function: ease-out;
+       -moz-transition-timing-function: ease-out;
+        -ms-transition-timing-function: ease-out;
+         -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+
+    -webkit-transition-delay: 0;
+       -moz-transition-delay: 0;
+        -ms-transition-delay: 0;
+         -o-transition-delay: 0;
+            transition-delay: 0;
 }
 
 .ui-scroll-panels.scroll-left .panel-left,
